@@ -1,0 +1,7 @@
+{
+  "name": "toy_robot_simulator",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
