@@ -16,12 +16,8 @@
         </ion-item>
       </ion-col>
     </ion-row>
-    <ion-row>
-      <ion-col>
-        <app-play-controls (newItemEvent)="rotateLeft($event)" (moveCommand)="moveCommandAction($event)">
-        </app-play-controls>
-      </ion-col>
-    </ion-row>
+    
   </ion-grid>
-
+<app-play-controls (newItemEvent)="rotateLeft($event)" (moveCommand)="moveCommandAction($event)">
+        </app-play-controls>
 </ion-content>
