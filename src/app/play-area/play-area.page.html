@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Toy Robot</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row class="ion-justify-content-center" *ngFor="let col of cols; let even=even ">
+      <ion-col [id]="row+'_'+col" *ngFor="let row of rows; let odd=odd" size-xs='2' size-sm='2' size-md='1' size-lg='1'
+        size-xl='1' [ngClass]="odd ? (even ? 'odd' : 'even') : (even ? 'even' : 'odd')">
+        <ion-item>
+          <img [id]='currentLocation' *ngIf="currentLocation == row+'_'+col ? true : null" height='30px' width='30px'
+            src="../../assets/images/robot.png" [ngStyle]="{'transform': 'rotate('+transX+'deg)'}">
+          <!-- ({{row}}, {{col}}) -->
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <app-play-controls (newItemEvent)="rotateLeft($event)" (moveCommand)="moveCommandAction($event)">
+        </app-play-controls>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

@@ -1,0 +1,16 @@
+ion-col {
+    padding: 0px;
+    border: 1px solid  rgb(97, 97, 255);
+    --ion-background-color: rgb(215, 215, 255);
+}
+ion-item{
+    font-size:10px;
+}
+.odd {
+    --ion-background-color: rgb(97, 97, 255);
+    // z-index: -1;
+}
+
+.even {
+    --ion-background-color: rgb(215, 215, 255);
+}
