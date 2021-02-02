@@ -12,12 +12,12 @@
         <ion-item>
           <img [id]='currentLocation' *ngIf="currentLocation == row+'_'+col ? true : null" height='30px' width='30px'
             src="../../assets/images/robot.png" [ngStyle]="{'transform': 'rotate('+transX+'deg)'}">
-          <!-- ({{row}}, {{col}}) -->
+
         </ion-item>
       </ion-col>
     </ion-row>
-    
+
   </ion-grid>
-<app-play-controls (newItemEvent)="rotateLeft($event)" (moveCommand)="moveCommandAction($event)">
-        </app-play-controls>
+  <app-play-controls (newItemEvent)="rotateLeft($event)" (moveCommand)="moveCommandAction($event)">
+  </app-play-controls>
 </ion-content>
