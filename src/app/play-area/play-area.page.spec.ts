@@ -10,7 +10,7 @@ describe('PlayAreaPage', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ PlayAreaPage ],
-      imports: [IonicModule.forRoot()]
+      imports: []
     }).compileComponents();
 
     fixture = TestBed.createComponent(PlayAreaPage);

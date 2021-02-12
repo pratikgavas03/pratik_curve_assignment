@@ -1,5 +1,5 @@
 <!-- <ion-content [scrollEvents]="true"> -->
-  <form [formGroup]="playControlsForm" (ngSubmit)="commandPlayRobot()">
+  <form [formGroup]="playControlsForm" class='formPlay' (ngSubmit)="commandPlayRobot()">
     <ion-grid class="ion-text-center">
       <ion-row>
         <ion-col>
@@ -35,7 +35,7 @@
       <ion-row>
         <ion-col>
           <!-- <ion-button fill='outline' [disabled]="!playControlsForm.valid" [disabled]="locationX.value === '' && locationY.value === ''">MOVE</ion-button> -->
-          <ion-button fill='outline' type="submit">MOVE
+          <ion-button fill='outline' type="submit" class='submitBtn'>MOVE
           </ion-button>
         </ion-col>
       </ion-row>
