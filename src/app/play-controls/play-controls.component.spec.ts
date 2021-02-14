@@ -30,11 +30,6 @@ describe('PlayControlsComponent', () => {
     expect(component.playControlsForm.valid).toBeFalsy();
   });
 
-  // it('Robot locationX validity', () => {
-  //   let locationX = component.playControlsForm.controls['locationX']; (1)
-  //   expect(locationX.valid).toBeFalsy(); (2)
-  // });
-
   it('Initial robot X value', (() => {
     fixture.detectChanges();
     expect(component.roboX).toEqual(-1, 'Initial robot X value is -1');
@@ -62,24 +57,31 @@ describe('PlayControlsComponent', () => {
     expect(component.commandPlayRobot).toHaveBeenCalled();
   }));
 
-  // it('should test click', () => {
-  //     spyOn(component, 'commandPlayRobot');
-  //     let el = fixture.debugElement.query(By.css('.formPlay')).nativeElement.click();
-  //     expect(component.commandPlayRobot).toHaveBeenCalled();
-  // });
-
   it('should open login page when click back button', fakeAsync(() => {
     let de = fixture.debugElement.query(By.css('.formPlay'));
     let el = de.triggerEventHandler('click', null);
 
-    tick(); // this is important
-    fixture.detectChanges(); // this is important
+    tick(); 
+    fixture.detectChanges(); 
 
-    // const compiled = fixture.debugElement.nativeElement;
     expect(component.roboX).toBeGreaterThanOrEqual(-1);
     expect(component.roboX).toBeLessThan(5);
 
     expect(component.roboY).toBeGreaterThanOrEqual(-1);
     expect(component.roboY).toBeLessThan(5);
   }));
+
+   it('should click LEFT button', async(() => {
+    fixture.detectChanges();
+    let buttonElement = fixture.debugElement.query(By.css('.leftBtn'));
+
+    buttonElement.triggerEventHandler('click', null);
+    fixture.detectChanges();
+
+    fixture.whenStable().then(() => {
+      expect(component.roboX).toBeGreaterThanOrEqual(-1);
+    });
+  }));
+
+  
 });
